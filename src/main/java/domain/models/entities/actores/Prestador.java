@@ -46,7 +46,7 @@ public class Prestador {
   @Column(name = "fechaNacimiento", columnDefinition = "DATE")
   private LocalDate fechaNacimiento;
 
-  @Column(name="tipoDocumento")
+  @Column(name = "tipoDocumento")
   @Enumerated(EnumType.STRING)
   private TipoDocumento tipoDocumento;
 
@@ -67,13 +67,14 @@ public class Prestador {
   private List<String> emails;
 
   @OneToOne
+  @JoinColumn(name = "reputacion_id")
   private Reputacion reputacion;
 
   public Prestador() {
     this.disponibilidades = new ArrayList<>();
   }
 
-  public void agregarDisponibilidad(Disponibilidad disponibilidad){
+  public void agregarDisponibilidad(Disponibilidad disponibilidad) {
     this.disponibilidades.add(disponibilidad);
     disponibilidad.setPrestador(this);
   }

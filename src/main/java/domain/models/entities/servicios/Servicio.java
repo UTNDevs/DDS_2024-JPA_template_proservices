@@ -32,4 +32,5 @@ public class Servicio {
   @OneToMany
   @JoinColumn(name = "servicio_id")
   private List<Tarea> tareas;
+
 }

@@ -1,4 +1,4 @@
-package domain.models.entities.converters;
+package domain.converters;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;

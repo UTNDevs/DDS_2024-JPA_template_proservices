@@ -1,6 +1,6 @@
 package domain.models.entities.actores;
 
-import domain.models.entities.converters.DiaSemanaAttributeConverter;
+import domain.converters.DiaSemanaAttributeConverter;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Column;
@@ -33,7 +33,8 @@ public class Disponibilidad {
   @Column(name = "horaFin", columnDefinition = "TIME")
   private LocalTime horaFin;
 
-  @Convert(converter = DiaSemanaAttributeConverter.class) // Los enums NO SE LLEVAN A UNA TABLA, sino que se mapea como un ordinal o un literal
+  @Convert(converter = DiaSemanaAttributeConverter.class)
+  // Los enums NO SE LLEVAN A UNA TABLA, sino que se mapea como un ordinal o un literal
   @Column(name = "dia")
   private DayOfWeek dia;
 }
